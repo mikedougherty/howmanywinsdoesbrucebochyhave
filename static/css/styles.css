@@ -1,0 +1,20 @@
+body {
+    /* Team colors from https://www.schemecolor.com/san-francisco-giants-mlb-logo-colors.php */
+    background-color: #231F20;
+    color: #F4793E;
+}
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+    font-size: 24pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.important {
+    text-decoration: underline;
+    padding-right: 4pt;
+    padding-left: 4pt;
+}
