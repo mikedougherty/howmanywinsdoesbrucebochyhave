@@ -15,4 +15,3 @@ RUN pipenv install --dev
 COPY . /app
 
 RUN pipenv run python setup.py install && pipenv run tox
-USER nobody
