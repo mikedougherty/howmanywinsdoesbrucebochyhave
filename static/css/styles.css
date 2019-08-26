@@ -2,6 +2,8 @@ body {
     /* Team colors from https://www.schemecolor.com/san-francisco-giants-mlb-logo-colors.php */
     background-color: #231F20;
     color: #F4793E;
+
+    font-family: Helvetica, Roboto, "Segoe UI", Calibri, sans-serif
 }
 
 .hero {
