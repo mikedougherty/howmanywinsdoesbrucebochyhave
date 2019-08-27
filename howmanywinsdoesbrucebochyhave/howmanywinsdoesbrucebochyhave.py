@@ -9,6 +9,7 @@ import requests
 MANAGER_URL = "https://www.baseball-reference.com/managers/bochybr01.shtml"
 
 
+@cachetools.func.ttl_cache(ttl=(15 * 60))
 def get_document(url=MANAGER_URL):
     return requests.get(url).text
 
@@ -29,15 +30,17 @@ def extract_row(rows, index):
     return rows.find(".//tr[{}]".format(index))
 
 
-@cachetools.func.ttl_cache(ttl=(15 * 60))
-def get_wins(manager_url):
-    doc = lxml.html.fromstring(get_document(manager_url))
+def get_wins(doc):
     table = extract_table(doc, "manager_stats")
     footer = extract_table_footer(table)
     row = extract_row(footer, "last()")
     value = extract_field(row, "W")
 
     return value
+
+
+def get_revised(doc):
+    return doc.find("./head/meta[@name='revised']").attrib["content"]
 
 
 class HowManyManagerWins(flask.Flask):
@@ -48,8 +51,10 @@ class HowManyManagerWins(flask.Flask):
         self.route("/")(self.index)
 
     def index(self):
-        wins = get_wins(self.manager_url)
-        content = flask.render_template("index.html", wins=wins)
+        doc = lxml.html.fromstring(get_document(self.manager_url))
+        wins = get_wins(doc)
+        revised = get_revised(doc)
+        content = flask.render_template("index.html", wins=wins, revised=revised)
         return flask.make_response(content)
 
 

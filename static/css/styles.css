@@ -1,4 +1,4 @@
-body {
+html, body, footer {
     /* Team colors from https://www.schemecolor.com/san-francisco-giants-mlb-logo-colors.php */
     background-color: #231F20;
     color: #F4793E;
@@ -8,7 +8,7 @@ body {
 
 .hero {
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
     font-size: 24pt;
     display: flex;
     justify-content: center;
@@ -19,4 +19,8 @@ body {
     text-decoration: underline;
     padding-right: 4pt;
     padding-left: 4pt;
+}
+
+.minor {
+    color: #C49D6E;
 }
