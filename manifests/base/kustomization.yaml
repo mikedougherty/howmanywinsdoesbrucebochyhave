@@ -6,3 +6,4 @@ images:
 resources:
   - deployment.yaml
   - ns.yaml
+  - service.yaml
