@@ -13,7 +13,7 @@ spec:
         app: howmanywins
     spec:
       containers:
-        - name: howmanywins
+        - name: web
           image: app:latest
           resources:
             requests:
@@ -24,3 +24,8 @@ spec:
               cpu: "250m"
           ports:
             - containerPort: 5000
+              name: http
+          livenessProbe:
+            httpGet:
+              port: http
+              path: "/"
