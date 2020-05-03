@@ -1,0 +1,8 @@
+---
+images:
+  - name: app
+    newName: mikedougherty/howmanywinsdoesbrucebochyhave
+
+resources:
+  - deployment.yaml
+  - ns.yaml
