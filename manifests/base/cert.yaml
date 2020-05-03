@@ -1,0 +1,13 @@
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: howmanywins-cert
+  namespace: howmanywins
+spec:
+  secretName: howmanywins-cert
+  issuerRef:
+    name: gcp
+    kind: ClusterIssuer
+  dnsNames:
+    - OVERLAY

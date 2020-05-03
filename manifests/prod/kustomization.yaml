@@ -2,4 +2,11 @@
 bases:
   - ../base
 
-patchesStrategicMerge: []
+namespace: howmanywins
+
+resources:
+  - ingress.yaml
+
+patchesStrategicMerge:
+  - cert.patch.yaml
+  - ns.patch.yaml

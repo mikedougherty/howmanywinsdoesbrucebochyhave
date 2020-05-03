@@ -4,4 +4,4 @@ kind: Namespace
 metadata:
   name: howmanywins
   annotations:
-    cnrm.cloud.google.com/project-id: OVERLAY
+    cnrm.cloud.google.com/project-id: megadoomer

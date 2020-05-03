@@ -3,7 +3,10 @@ images:
   - name: app
     newName: mikedougherty/howmanywinsdoesbrucebochyhave
 
+namespace: howmanywins
+
 resources:
+  - cert.yaml
   - deployment.yaml
   - ns.yaml
   - service.yaml
