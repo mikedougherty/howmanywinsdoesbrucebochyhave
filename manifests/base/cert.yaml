@@ -7,7 +7,7 @@ metadata:
 spec:
   secretName: howmanywins-cert
   issuerRef:
-    name: gcp
+    name: cert-manager
     kind: ClusterIssuer
   dnsNames:
     - OVERLAY
