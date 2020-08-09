@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: howmanywins
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`howmanywinsdoesbrucebochyhave.do.megadoomer.io`)
+      kind: Rule
+      services:
+        - name: howmanywins
+          port: 80
+  tls:
+    secretName: howmanywins-cert
