@@ -1,0 +1,16 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+
+  build:
+ 
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag docker.pkg.github.com/mikedougherty/howmanywinsdoesbrucebochyhave/web:$(git log -n1 --date="format:%Y%m%dT%H%M%S" --pretty="format:%cd-%h" --abbrev=7)
+
+# need docker login? docker push, docker promote to 'latest'
