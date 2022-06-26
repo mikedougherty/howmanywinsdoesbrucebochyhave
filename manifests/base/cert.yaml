@@ -1,21 +1,12 @@
 ---
-apiVersion: orchestration.cnrm.cloud.google.com/v1alpha1
-kind: FutureObject
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
 metadata:
-  name: howmanywins-cert-future
-  namespace: howmanywins
+  name: howmanywins-cert
 spec:
-  configMapRef:
-    name: cluster-info
-  object:
-    apiVersion: cert-manager.io/v1alpha2
-    kind: Certificate
-    metadata:
-      name: howmanywins-cert
-    spec:
-      dnsNames:
-        - howmanywinsdoesbrucebochyhave.com
-      issuerRef:
-        kind: ClusterIssuer
-        name: cert-manager
-      secretName: howmanywins-cert
+  dnsNames:
+    - howmanywinsdoesbrucebochyhave.com
+  issuerRef:
+    kind: ClusterIssuer
+    name: cert-manager
+  secretName: howmanywins-cert
