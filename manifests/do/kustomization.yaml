@@ -1,8 +1,11 @@
 ---
-bases:
-  - ../base
-
 namespace: howmanywins
 
+images:
+  - name: app
+    newName: mikedougherty/howmanywinsdoesbrucebochyhave
+
 resources:
+  - deployment.yaml
   - ingress.yaml
+  - service.yaml
