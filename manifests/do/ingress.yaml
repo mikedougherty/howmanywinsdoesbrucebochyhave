@@ -4,8 +4,6 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: cert-manager
-    traefik.ingress.kubernetes.io/preserve-host: "true"
-    traefik.ingress.kubernetes.io/router.tls: "true"
   name: howmanywins
 spec:
   rules:
