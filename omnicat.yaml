@@ -1,46 +1,13 @@
 schemaVersion: 0.1.0
-description: >-
-  howmanywinsdoesbrucebochyhave.com — a deliberately public single-page site
-  showing Bruce Bochy's career managerial wins (scraped from baseball-reference).
-
+description: Bruce Bochy win counter web application
 projects:
   - id: howmanywins
     directory: ./
-    description: Public web app; no login by design (own domain, not *.megadoomer.io)
+    description: Win counter frontend
     facts:
-      language:
-        value: python
+      has_auth:
+        value: false
         provenance: agent-asserted
-        last_evaluated: 2026-09-08
-      deploy:
-        kind: kustomize
-        config_repo:
-          value: megadoomer-io/megadoomer-config
-          provenance: agent-asserted
-          last_evaluated: 2026-09-08
-        routing:
-          value: gateway-api
-          provenance: agent-asserted
-          last_evaluated: 2026-09-08
-      service:
-        hostname:
-          value: howmanywinsdoesbrucebochyhave.com
-          provenance: agent-asserted
-          last_evaluated: 2026-09-08
-        handles_own_auth:
-          value: false
-          provenance: agent-asserted
-          last_evaluated: 2026-09-08
-      auth_gap:
-        value: true
-        provenance: agent-asserted
-        last_evaluated: 2026-09-08
-        notes: >-
-          intentionally public — no oauth2-proxy in front. This is an ACCEPTED
-          gap, not an incident: the site exposes only public scraped data.
     links:
-      - repository: megadoomer-io/megadoomer-config
-        directory: applications/static/howmanywins/
+      - project: howmanywins-config
         kind: config-repo
-        provenance: agent-asserted
-        last_evaluated: 2026-09-08
